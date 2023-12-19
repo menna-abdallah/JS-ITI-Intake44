@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background: linear-gradient(to right, rgb(63, 42, 219) ,rgb(208, 26, 211) );
+    color: antiquewhite;
+}
+h1 {
+    text-align: center;    
+}
+.section {
+    display: grid;
+    margin: 100px 100px;
+    grid-gap: 10px;  
+    grid-template-columns: repeat(4,23%);  
+}
+.section .content {
+    position: relative;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid rgb(255, 255, 255);
+    height: 300px;
+    border-radius: 7px;
+    transition: padding 1s linear;
+    overflow: hidden;
+}
+.section .content:hover{
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    transition: padding 1s linear;
+}
+.section .content img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+.section .content .product {
+    position: absolute;
+    top: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    transition: .7s linear;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.section .content:hover .product {
+    opacity: 1;
+    top:0;
+}
+@keyframes rotate{
+    from{ transform: rotate3d(1,5,1, 45deg); }
+    to { transform: none; }
+  }
+  
+  .content{
+    animation: rotate .9s linear ; 
+  }
